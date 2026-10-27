@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Roman Khan – EEE Student | Embedded Systems & Robotics</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap">
+<style>
+:root{
+  --bg:#4A4A4A;--ink:#f2f5fc;--mute:#d0d6e4;--blue:#72b4ff;--cyan:#4fe0ee;
+  --line:#6a6a6a;--card:#3e3e3e;--grid:rgba(255,255,255,.05)
+}
+@media(prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f3f6fb;--ink:#0b1222;--mute:#51607f;--blue:#1d5fd1;--cyan:#0a8a9a;--line:#cfd8e8;--card:#fff;--grid:rgba(29,95,209,.07)}}
+:root[data-theme="light"]{--bg:#f3f6fb;--ink:#0b1222;--mute:#51607f;--blue:#1d5fd1;--cyan:#0a8a9a;--line:#cfd8e8;--card:#fff;--grid:rgba(29,95,209,.07)}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{position:relative;margin:0;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+background:var(--bg);color:var(--ink);font-family:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65;
+background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px}
+nav{max-width:920px;margin:0 auto;padding:18px 22px;display:flex;gap:22px;flex-wrap:wrap;justify-content:flex-end}
+nav a{color:var(--mute);text-decoration:none;font-weight:500}
+nav a:hover{color:var(--ink)}
+#theme{font:inherit;font-weight:500;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:4px;padding:2px 10px;font-size:1.25rem;line-height:1.4;cursor:pointer}
+#theme:hover{border-color:var(--blue)}
+#theme:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+main{max-width:920px;margin:0 auto;padding:0 22px 60px}
+.hero{padding:56px 0 44px}
+.role{margin:0 0 12px;color:var(--cyan);font-weight:500}
+h1{font-size:clamp(2.8rem,10vw,5.4rem);line-height:.95;margin:0;font-weight:700;letter-spacing:-.03em}
+.lead{max-width:34em;color:var(--mute);font-size:1.18rem;margin:24px 0 0}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-block;padding:12px 22px;font-weight:700;text-decoration:none;border:2px solid var(--blue);color:var(--ink);border-radius:4px}
+.btn.fill{background:var(--blue);color:#06101f}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.trace{display:block;width:100%;height:auto;margin:40px 0 0}
+.trace path{fill:none;stroke:var(--blue);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1200;stroke-dashoffset:1200;animation:draw 2.2s ease-out .2s forwards}
+.trace circle{fill:var(--bg);stroke:var(--cyan);stroke-width:3}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){.trace path{animation:none;stroke-dashoffset:0}html{scroll-behavior:auto}}
+section{padding:40px 0;border-top:1px solid var(--line)}
+h2{font-size:1.7rem;margin:0 0 18px;font-weight:700;letter-spacing:-.01em}
+p{margin:0 0 14px;max-width:40em}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.skill{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--blue);padding:16px 18px;font-weight:700}
+.skill small{display:block;color:var(--mute);font-weight:400;margin-top:4px}
+/* Projects grid */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.project{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--cyan);padding:18px 20px;border-radius:6px}
+.project h3{margin:0 0 8px;font-size:1.1rem}
+.project p{color:var(--mute);font-size:.95rem;margin:0}
+.edu{background:var(--card);border:1px solid var(--line);padding:18px 20px;max-width:40em}
+.edu b{display:block;font-size:1.15rem}
+.edu span{color:var(--mute)}
+.note{color:var(--mute)}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:10px 24px;margin:0}
+dt{color:var(--mute)}
+dd{margin:0;font-weight:700;overflow-wrap:anywhere}
+a{color:var(--blue)}
+footer{color:var(--mute);font-size:.9rem;padding-top:26px}
+.namerow{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.photo{flex:0 0 auto;width:190px}
+.photo img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 22%;border-radius:10px}
+</style>
+</head>
+<body>
+<nav aria-label="Sections">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#education">Education</a>
+  <a href="#contact">Contact</a>
+  <button id="theme" type="button" aria-label="Switch theme">Theme</button>
+</nav>
+
+<main>
+<header class="hero">
+  <p class="role">EEE Student | Embedded Systems Enthusiast</p>
+  <div class="namerow">
+    <h1>Roman Khan</h1>
+    <div class="photo">
+      <img src="YOUR_PHOTO_BASE64_OR_URL" alt="Portrait of Roman Khan" width="440" height="485">
+    </div>
+  </div>
+  <p class="lead">I build with Arduino and ESP32 – circuits, robots and embedded code that do something real. Based in Dhaka, Bangladesh.</p>
+  <div class="btns">
+    <a class="btn fill" href="#projects">View my projects</a>
+    <a class="btn" href="#contact">Contact me</a>
+    <a class="btn" href="https://github.com/romankhan70" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/romankhan70/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+  <svg class="trace" viewBox="0 0 800 70" role="img" aria-label="Circuit trace decoration">
+    <path d="M0 35 H180 L210 12 H330 L360 35 H520 L550 58 H680 L710 35 H800"/>
+    <circle cx="180" cy="35" r="6"/>
+    <circle cx="360" cy="35" r="6"/>
+    <circle cx="550" cy="58" r="6"/>
+  </svg>
+</header>
+
+<section id="about">
+  <h2>About me</h2>
+  <p>I’m an Electrical and Electronic Engineering student at the University of Asia Pacific in Dhaka. My main interests are robotics and embedded programming, and I like turning ideas into working hardware using Arduino and ESP32 boards.</p>
+</section>
+
+<section id="skills">
+  <h2>Skills and technologies</h2>
+  <div class="skills">
+    <div class="skill">Arduino<small>Microcontroller projects</small></div>
+    <div class="skill">ESP32<small>Wi‑Fi and Bluetooth devices</small></div>
+    <div class="skill">Robotics<small>Sensors, motors, control</small></div>
+    <div class="skill">Embedded programming<small>Code that runs on hardware</small></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="project">
+      <h3>Line-following Robot</h3>
+      <p>Arduino-based robot that uses IR sensors to follow a track. Tuned PID for smooth turns.</p>
+    </div>
+    <div class="project">
+      <h3>ESP32 Home Sensor</h3>
+      <p>Wi-Fi temperature &amp; humidity monitor that pushes readings to a web dashboard.</p>
+    </div>
+    <div class="project">
+      <h3>Bluetooth Car</h3>
+      <p>Smartphone-controlled car using an HC-05 module and an L298N motor driver.</p>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="edu">
+    <b>University of Asia Pacific</b>
+    <span>B.Sc. student, Electrical and Electronic Engineering (EEE) · Dhaka, Bangladesh</span>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <dl>
+    <dt>Location</dt><dd>Dhaka, Bangladesh</dd>
+  </dl>
+  <div class="btns">
+    <a class="btn fill" href="mailto:romankhan001x@gmail.com">Email me</a>
+    <a class="btn" href="https://github.com/romankhan70" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/romankhan70/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+</section>
+
+<footer>© 2026 Roman Khan</footer>
+</main>
+
+<script>
+(function(){
+  var r=document.documentElement,
+      b=document.getElementById('theme'),
+      m=window.matchMedia('(prefers-color-scheme: light)'),
+      cur=null;
+  try{cur=localStorage.getItem('theme')}catch(e){}
+  if(cur!=='light'&&cur!=='dark'){cur=m.matches?'light':'dark'}
+  function apply(t){
+    r.setAttribute('data-theme',t);
+    b.textContent=t==='dark'?'☀':'☾';
+    b.setAttribute('aria-label',t==='dark'?'Switch to light mode':'Switch to dark mode');
+    b.title=b.getAttribute('aria-label');
+  }
+  apply(cur);
+  b.addEventListener('click',function(){
+    cur=cur==='dark'?'light':'dark';
+    apply(cur);
+    try{localStorage.setItem('theme',cur)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
